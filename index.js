@@ -9,13 +9,14 @@ app.use(bodyParser.json());
 
 app.set('port', (process.env.PORT || 3000));
 
-var conString = "postgres://localhost/ghiot";
+var conString = "postgres://soldikoxxtdhug:gcrTPMhv64E331SlaoYkFQw5tl@ec2-54-228-189-127.eu-west-1.compute.amazonaws.com:5432/dldk7401vc8aq";
 
 var client;
 
 pg.connect(conString, function(err, dbclient, done) {
 	client = dbclient;
 	startServer();
+	console.log(err);
 });
 
 app.get('/', function (req, res) {
