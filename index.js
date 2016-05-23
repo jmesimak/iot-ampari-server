@@ -2,14 +2,14 @@
 
 var express = require('express');
 var pg = require('pg');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var app = express();
 
 app.use(bodyParser.json());
 
 app.set('port', (process.env.PORT || 3000));
 
-var conString = "postgres://soldikoxxtdhug:gcrTPMhv64E331SlaoYkFQw5tl@ec2-54-228-189-127.eu-west-1.compute.amazonaws.com:5432/dldk7401vc8aq";
+var conString = process.env.POSTGRE_URL || "";
 
 var client;
 
@@ -48,7 +48,6 @@ app.get('/plant/:id/readings', (request, response) => {
 		}
 	)
 });
-
 
 function startServer() {
 	app.listen(app.get('port'), function() {
