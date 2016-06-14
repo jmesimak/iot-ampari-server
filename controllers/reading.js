@@ -25,7 +25,7 @@ module.exports = function(app) {
 						return medians;
 					}, []);
 		});
-		return deviceReadingsChunked;
+		return _.sortBy(deviceReadingsChunked[0], (r) => { return r.recorded });
 	}
 
 	app.get('/device/:id/readings', (request, response) => {
@@ -48,5 +48,12 @@ module.exports = function(app) {
 			console.log(':(');
 			console.log(e);
 		});
+	});
+
+	app.get('/plants', (request, response) => {
+		
+		
+
+	
 	});
 }

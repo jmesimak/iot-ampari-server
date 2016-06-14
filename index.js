@@ -4,9 +4,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var db = require('./db');
-var readingCtrl = require('./controllers/reading')(app);
-
-app.use(bodyParser.json());
 
 
 app.use(function(req, res, next) {
@@ -15,6 +12,11 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+var readingCtrl = require('./controllers/reading')(app);
+
+app.use(bodyParser.json());
+
 
 
 
