@@ -14,6 +14,7 @@ INSERT INTO device_type (name) VALUES ('light');
 INSERT INTO device_type (name) VALUES ('air_pressure');
 INSERT INTO device_type (name) VALUES ('oxygen');
 INSERT INTO device_type (name) VALUES ('carbon');
+INSERT INTO device_type (name) VALUES ('soil_moisture');
 
 CREATE TABLE device (
 	id				SERIAL PRIMARY KEY,
