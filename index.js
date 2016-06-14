@@ -8,7 +8,18 @@ var readingCtrl = require('./controllers/reading')(app);
 
 app.use(bodyParser.json());
 
+
+app.use(function(req, res, next) {
+  console.log('dank stuff');
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
+
 app.set('port', (process.env.PORT || 3000));
+
 
 
 

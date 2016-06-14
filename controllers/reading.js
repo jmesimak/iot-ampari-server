@@ -28,7 +28,7 @@ module.exports = function(app) {
 		return deviceReadingsChunked;
 	}
 
-	app.get('/plant/:id/readings', (request, response) => {
+	app.get('/device/:id/readings', (request, response) => {
 		let plantId = request.params.id;
 		let startTimeDefault = (new Date()).setHours(new Date().getHours() - 12);
 		let startTime = request.query.start || startTimeDefault;
